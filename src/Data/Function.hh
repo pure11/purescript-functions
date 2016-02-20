@@ -73,6 +73,10 @@ namespace Data_Function {
 
   //---------------------------------------------------------------------------
 
+  inline auto runFn0(const any& fn) -> any {
+    return fn();
+  }
+
   inline auto runFn1(const any& fn, const any& a) -> any {
     return fn(a);
   }
