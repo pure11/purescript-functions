@@ -73,159 +73,205 @@ namespace Data_Function {
 
   //---------------------------------------------------------------------------
 
-  inline auto runFn0(const any& fn) -> any {
-    return fn(undefined);
+  inline auto $runFn1(const any& fn, const any& a) -> any {
+    return fn(a);
   }
 
-  inline auto runFn1(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return fn(a);
-    };
+  inline auto $runFn2(const any& fn, const any& a, const any& b) -> any {
+    return fn(a)(b);
   }
 
-  inline auto runFn2(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return fn(a)(b);
-      };
-    };
+  inline auto $runFn3(const any& fn, const any& a, const any& b, const any& c) -> any {
+    return fn(a)(b)(c);
   }
 
-  inline auto runFn3(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return fn(a)(b)(c);
-        };
-      };
-    };
+  inline auto $runFn4(const any& fn, const any& a, const any& b, const any& c, const any& d) -> any {
+    return fn(a)(b)(c)(d);
   }
 
-  inline auto runFn4(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return fn(a)(b)(c)(d);
-          };
-        };
-      };
-    };
+  inline auto $runFn5(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e) -> any {
+    return fn(a)(b)(c)(d)(e);
   }
 
-  inline auto runFn5(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return [=](const any& e) -> any {
-              return fn(a)(b)(c)(d)(e);
-            };
-          };
-        };
-      };
-    };
+  inline auto $runFn6(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e, const any& f) -> any {
+    return fn(a)(b)(c)(d)(e)(f);
   }
 
-  inline auto runFn6(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return [=](const any& e) -> any {
-              return [=](const any& f) -> any {
-                return fn(a)(b)(c)(d)(e)(f);
-              };
-            };
-          };
-        };
-      };
-    };
+  inline auto $runFn7(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                     const any& f, const any& g) -> any {
+    return fn(a)(b)(c)(d)(e)(f)(g);
   }
 
-  inline auto runFn7(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return [=](const any& e) -> any {
-              return [=](const any& f) -> any {
-                return [=](const any& g) -> any {
-                  return fn(a)(b)(c)(d)(e)(f)(g);
-                };
-              };
-            };
-          };
-        };
-      };
-    };
+  inline auto $runFn8(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                     const any& f, const any& g, const any& h) -> any {
+    return fn(a)(b)(c)(d)(e)(f)(g)(h);
   }
 
-  inline auto runFn8(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return [=](const any& e) -> any {
-              return [=](const any& f) -> any {
-                return [=](const any& g) -> any {
-                  return [=](const any& h) -> any {
-                    return fn(a)(b)(c)(d)(e)(f)(g)(h);
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
+  inline auto $runFn9(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                     const any& f, const any& g, const any& h, const any& i) -> any {
+    return fn(a)(b)(c)(d)(e)(f)(g)(h)(i);
   }
 
-  inline auto runFn9(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return [=](const any& e) -> any {
-              return [=](const any& f) -> any {
-                return [=](const any& g) -> any {
-                  return [=](const any& h) -> any {
-                    return [=](const any& i) -> any {
-                      return fn(a)(b)(c)(d)(e)(f)(g)(h)(i);
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
+  inline auto $runFn10(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                      const any& f, const any& g, const any& h, const any& i, const any& j) -> any {
+    return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j);
   }
 
-  inline auto runFn10(const any& fn) -> any {
-    return [=](const any& a) -> any {
-      return [=](const any& b) -> any {
-        return [=](const any& c) -> any {
-          return [=](const any& d) -> any {
-            return [=](const any& e) -> any {
-              return [=](const any& f) -> any {
-                return [=](const any& g) -> any {
-                  return [=](const any& h) -> any {
-                    return [=](const any& i) -> any {
-                      return [=](const any& j) -> any {
-                        return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j);
-                      };
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  }
+  //---------------------------------------------------------------------------
+
+  // inline auto runFn0(const any& fn) -> any {
+  //   return fn(undefined);
+  // }
+  //
+  // inline auto runFn1(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return fn(a);
+  //   };
+  // }
+  //
+  // inline auto runFn2(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return fn(a)(b);
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn3(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return fn(a)(b)(c);
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn4(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return fn(a)(b)(c)(d);
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn5(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return [=](const any& e) -> any {
+  //             return fn(a)(b)(c)(d)(e);
+  //           };
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn6(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return [=](const any& e) -> any {
+  //             return [=](const any& f) -> any {
+  //               return fn(a)(b)(c)(d)(e)(f);
+  //             };
+  //           };
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn7(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return [=](const any& e) -> any {
+  //             return [=](const any& f) -> any {
+  //               return [=](const any& g) -> any {
+  //                 return fn(a)(b)(c)(d)(e)(f)(g);
+  //               };
+  //             };
+  //           };
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn8(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return [=](const any& e) -> any {
+  //             return [=](const any& f) -> any {
+  //               return [=](const any& g) -> any {
+  //                 return [=](const any& h) -> any {
+  //                   return fn(a)(b)(c)(d)(e)(f)(g)(h);
+  //                 };
+  //               };
+  //             };
+  //           };
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn9(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return [=](const any& e) -> any {
+  //             return [=](const any& f) -> any {
+  //               return [=](const any& g) -> any {
+  //                 return [=](const any& h) -> any {
+  //                   return [=](const any& i) -> any {
+  //                     return fn(a)(b)(c)(d)(e)(f)(g)(h)(i);
+  //                   };
+  //                 };
+  //               };
+  //             };
+  //           };
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
+  //
+  // inline auto runFn10(const any& fn) -> any {
+  //   return [=](const any& a) -> any {
+  //     return [=](const any& b) -> any {
+  //       return [=](const any& c) -> any {
+  //         return [=](const any& d) -> any {
+  //           return [=](const any& e) -> any {
+  //             return [=](const any& f) -> any {
+  //               return [=](const any& g) -> any {
+  //                 return [=](const any& h) -> any {
+  //                   return [=](const any& i) -> any {
+  //                     return [=](const any& j) -> any {
+  //                       return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j);
+  //                     };
+  //                   };
+  //                 };
+  //               };
+  //             };
+  //           };
+  //         };
+  //       };
+  //     };
+  //   };
+  // }
 
 } // namespace Data_Function
 
