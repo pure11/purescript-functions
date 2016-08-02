@@ -12,8 +12,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 //
-#ifndef Data_Function_FFI_HH
-#define Data_Function_FFI_HH
+#ifndef Data_Function_Uncurried_FFI_HH
+#define Data_Function_Uncurried_FFI_HH
 
 #include "PureScript/PureScript.hh"
 
@@ -22,7 +22,7 @@
 //       currently just pass-throughs.
 //-----------------------------------------------------------------------------
 
-namespace Data_Function {
+namespace Data_Function_Uncurried {
   using namespace PureScript;
 
   //---------------------------------------------------------------------------
@@ -277,6 +277,6 @@ namespace Data_Function {
   //   };
   // }
 
-} // namespace Data_Function
+} // namespace Data_Function_Uncurried
 
-#endif // Data_Function_FFI_HH
+#endif // Data_Function_Uncurried_FFI_HH
