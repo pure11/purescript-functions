@@ -81,43 +81,124 @@ namespace Data_Function_Uncurried {
     return fn(a);
   }
 
-  inline auto runFn2(const any& fn, const any& a, const any& b) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn2(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn2(const F& fn, const any& a, const any& b) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b);
   }
 
-  inline auto runFn3(const any& fn, const any& a, const any& b, const any& c) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn3(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn3(const F& fn, const any& a, const any& b, const any& c) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c);
   }
 
-  inline auto runFn4(const any& fn, const any& a, const any& b, const any& c, const any& d) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn4(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn4(const F& fn, const any& a, const any& b, const any& c, const any& d) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d);
   }
 
-  inline auto runFn5(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn5(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn5(const F& fn, const any& a, const any& b, const any& c, const any& d, const any& e) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d)(e);
   }
 
-  inline auto runFn6(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e, const any& f) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn6(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn6(const F& fn, const any& a, const any& b, const any& c, const any& d, const any& e, const any& f) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d)(e)(f);
   }
 
-  inline auto runFn7(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
-                                     const any& f, const any& g) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn7(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn7(const F& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                     const any& f, const any& g) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d)(e)(f)(g);
   }
 
-  inline auto runFn8(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
-                                     const any& f, const any& g, const any& h) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn8(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn8(const F& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                  const any& f, const any& g, const any& h) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d)(e)(f)(g)(h);
   }
 
-  inline auto runFn9(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
-                                     const any& f, const any& g, const any& h, const any& i) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn9(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn9(const F& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                  const any& f, const any& g, const any& h, const any& i) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d)(e)(f)(g)(h)(i);
   }
 
-  inline auto runFn10(const any& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
-                                      const any& f, const any& g, const any& h, const any& i, const any& j) -> any {
+  template <typename F, typename ... Args>
+  inline auto runFn10(F&& fn, Args&&...args) ->
+      typename std::enable_if<!std::is_convertible<F,any>::value,
+                              typename std::result_of<F(Args...)>::type>::type {
+    return fn(std::forward<Args>(args)...);
+  }
+
+  template <typename F>
+  inline auto runFn10(const F& fn, const any& a, const any& b, const any& c, const any& d, const any& e,
+                                   const any& f, const any& g, const any& h, const any& i, const any& j) ->
+      typename std::enable_if<std::is_convertible<F,any>::value, any>::type {
     return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j);
   }
 
